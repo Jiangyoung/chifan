@@ -5,30 +5,19 @@
  * Date: 2015/9/30
  * Time: 16:06
  */
-namespace Core\Base;
+namespace Common\Base;
 
-use Core\Conf;
+use Common\Conf;
 
 class MysqliDao
 {
     protected $_conn;
     final function __construct(){
-        $s_time = $this->microtime_float_a();
         $dbConfig = Conf::getConf('public/db','iweb');
-
         if(empty($dbConfig)){
             exit("Fatal: config file exists!");
         }
-
-        $e_time = $this->microtime_float_a();
-        echo 'getConf';
-        var_dump($e_time-$s_time);
-
-        $s_time = $this->microtime_float_a();
         $this->_conn = new \mysqli($dbConfig['host'],$dbConfig['user'],$dbConfig['passwd'],$dbConfig['dbname']);
-        $e_time = $this->microtime_float_a();
-        echo 'new Mysqli';
-        var_dump($e_time-$s_time);
 
         if(mysqli_connect_errno()){
             printf ( "Connect failed: %s\n" , mysqli_connect_error());

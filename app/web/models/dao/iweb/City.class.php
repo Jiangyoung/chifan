@@ -7,7 +7,7 @@
  */
 namespace Dao\Iweb;
 
-use \Core\Base\MysqliDao;
+use \Common\Base\MysqliDao;
 class City extends MysqliDao{
     protected $_table_name = 'city';
     protected $_table_fields=array('city_id','city_name');

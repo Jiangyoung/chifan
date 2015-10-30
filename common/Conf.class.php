@@ -5,7 +5,7 @@
  * Date: 2015/9/30
  * Time: 16:16
  */
-namespace Core;
+namespace Common;
 
 class Conf
 {
@@ -20,7 +20,10 @@ class Conf
         }
         return $conf;
     }
+    public static function getAppConf(){
+
+    }
     public static function getConfPath(){
-        return dirname(__FILE__).'/../config';
+        return dirname(__FILE__).'/../conf';
     }
 }

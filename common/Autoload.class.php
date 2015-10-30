@@ -5,24 +5,24 @@
  * Date: 2015/9/30
  * Time: 11:42
  */
-namespace Core;
+namespace Common;
 class Autoload
 {
     private static $arrMap = array();
     private static $appName = null;
     private static $layerPath = array(
-        'Core'  =>  '../../core',
+        'Common'  =>  '../../Common',
         'Action' => 'actions',
         'Controller' => 'controllers',
         'Service' => 'models/service',
         'Dao' => 'models/dao'
     );
     public static function start(){
-        spl_autoload_register("\\Core\\Autoload::autoload");
+        spl_autoload_register("\\Common\\Autoload::autoload");
     }
     public static function reset(){
 
-        spl_autoload_unregister("\\Core\\Autoload::autoload");
+        spl_autoload_unregister("\\Common\\Autoload::autoload");
     }
     public static function autoload($className){
         $className = str_replace('\\','/',$className);
@@ -58,8 +58,5 @@ class Autoload
     }
     private static function getDefaultArrMap(){
         return array();
-    }
-    private static function getArrMap(){
-        return self::$arrMap;
     }
 }

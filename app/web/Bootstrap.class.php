@@ -6,8 +6,6 @@
  * Time: 11:39
  */
 class Bootstrap {
-
     public function run(){
-
     }
 }

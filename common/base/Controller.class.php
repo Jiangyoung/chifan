@@ -6,7 +6,7 @@
  * Time: 14:18
  */
 
-namespace Core\Base;
+namespace Common\Base;
 
 class Controller
 {
@@ -20,8 +20,8 @@ class Controller
         if(!class_exists($action)){
             exit("Fatal: $actionName not exists");
         }
-        if(!is_subClass_of($action, "\\Core\\Base\\Action")){
-            exit("Fatal: $actionName must extends Core\\Base\\Action!");
+        if(!is_subClass_of($action, "\\Common\\Base\\Action")){
+            exit("Fatal: $actionName must extends Common\\Base\\Action!");
         }
 
         $actionObj = new $action();

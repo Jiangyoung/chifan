@@ -5,12 +5,12 @@
  * Date: 2015/9/30
  * Time: 14:34
  */
-namespace Core\Base;
+namespace Common\Base;
 
-use \Core\Autoload;
+use \Common\Autoload;
 
 class Template{
-    public $tplVal = array();
+    public $tplVar = array();
 
     function __construct(){
 
@@ -21,7 +21,7 @@ class Template{
      * @param $value
      */
     public function assign($key,$value){
-        $this->tplVal[$key] = $value;
+        $this->tplVar[$key] = $value;
     }
 
     /**
@@ -29,9 +29,10 @@ class Template{
      */
     public function display($tplName){
         $tplFile = $this->getTplFile($tplName);
+        var_dump($this->tplVar);
         ob_start();
         ob_implicit_flush(0);
-        extract($this->tplVar, EXTR_OVERWRITE);
+        extract($this->tplVar);
         include $tplFile;
         $content = ob_get_clean();
         echo $content;

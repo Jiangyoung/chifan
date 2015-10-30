@@ -5,7 +5,8 @@
  * Date: 2015/9/30
  * Time: 14:31
  */
-namespace Core\Base;
+namespace Common\Base;
+
 class Action
 {
     public function __construct(){

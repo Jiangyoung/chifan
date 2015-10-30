@@ -6,7 +6,7 @@
  * Time: 14:17
  */
 namespace Controller;
-use \Core\Base\Controller;
+use \Common\Base\Controller;
 class Index extends Controller{
     public $actions = array(
         'index' => '\\Action\\Index\\Index'
